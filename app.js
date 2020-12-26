@@ -13,6 +13,9 @@ list.forEach(function(slide, index){
     slide.style.left = `${index * 100}%`
 });
 
+// lanuch my resize function
+resizeIcons()
+ 
 
 let counter = 0;
 
@@ -36,11 +39,11 @@ function carousel(){
     // working with slider
     let sum = list.length
     if (counter === sum){
-        console.log('is it', sum, 'you should rest to 0');
+       // console.log('is it', sum, 'you should rest to 0');
         counter = 0;
     }
     if (counter < 0){
-        console.log('is lower', sum -1,'you should rest up!');
+       // console.log('is lower', sum -1,'you should rest up!');
         counter = sum -1
     }
     // add translateX on each click - or +
@@ -49,11 +52,18 @@ function carousel(){
     });
 };
 
-//get a width of the screen;
-//const width  = window.innerWidth || document.//documentElement.clientWidth || 
-//document.body.clientWidth;
-//console.log(width);
-
+// this function for resize icons in large screen
+function resizeIcons(){
+    //get a width of the screen;
+    const width  = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    //console.log(width);
+    chevron.forEach(function(item){
+        if ( width > 1200){
+            item.classList.remove('fa-2x');
+            item.classList.add('fa-3x');
+        }
+    })
+}
 
 
 //window.location.reload(true); 
