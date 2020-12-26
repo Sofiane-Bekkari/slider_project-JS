@@ -14,16 +14,18 @@ body {
     overflow: hidden;
     margin: 5rem auto;
     height: 35vh;
-    width: 95%;
+    width: 480px;
 }  
 
 .slider-container {
     position: absolute;
+    text-align: center;
     border: solid #9361ce 5px;
     border-radius: 5px;
     width: 98%;
-    height: 100%;
+    height: 96%;
     transition: all .5s ease-out;
+    box-shadow: 2px 2px 8px gray;
 }
 
 .show-slider {
@@ -38,23 +40,31 @@ body {
     position: absolute;
     text-shadow: 1px 1px 3px rgb(80, 80, 80);
 }
-img {
-    position: absolute;
-    width: 100%;
-    height: 35vh;
-    margin: 0 auto;
+/* container img */
+.img {
     display: block;
+    width: 10%;
+    height: 10%;
     text-align: center;
-    object-fit: cover;
+    background-position: center;
+    background-size: cover;
 }
+img {
+    display: block;
+    width: 470px;
+    object-fit: cover;
+    object-fit: fill;
+    
+}
+
 
 /* button cont */
 
 .section-btn {
     position: absolute;
-    left: 22px;
+    left:1%;
     top: 45%;
-    width: 90%;
+    width: 97%;
     text-align: center;
     margin: 0 auto;
 }
@@ -62,19 +72,20 @@ img {
 .btn-container {
     display: flex;
     justify-content: space-between;
-    padding: 0;
+    padding: 0 1rem;
     margin: 0;
 }
 
 button {
     border: none;
     background-color: none;
-    opacity: 0.3;
+    border-radius: 50px;
+    opacity: 0.4;
     text-align: center;
     cursor: pointer;
 }
 button:hover {
-    opacity: 0.5;
+    opacity: 0.7;
 }
 .fas {
     z-index: 99;
@@ -84,7 +95,7 @@ button:hover {
     border-radius: 50%;
 }
 
-/* SHIFT SLIDER */
+/* SHIFT SLIDER 
 
 .slider-container:nth-child(1) {
     left: 0%;
@@ -99,8 +110,9 @@ button:hover {
     left: 300%;
 }
 .slider-container {
-    transform: translateX(-200%);
+    transform: translateX(-0%);
 }
+*/
 
 /** media query 600px **/
 @media screen and (min-width: 600px) {
@@ -114,7 +126,7 @@ button:hover {
         height: 35vh;
         width: 550px;
     }
-    
+
     /*section-btn*/
     .section-btn {
         text-align: center;
@@ -139,17 +151,21 @@ button:hover {
     }
 
     .container {
-        width: 800px;
+        overflow: hidden;
+        width: 700px;
         height: 55.8vh;
     }
    
-    img {
-       height: 100%;
+    .slider-container {
+        width: 690px;
     }
-   
 
+    img {
+        width: 690px;
+        height: 53.5vh;
+    }
     button {
-        opacity: 0.7;
+        opacity: 0.5;
     }
     .fas {
         font-size: 15rem;
@@ -160,15 +176,34 @@ button:hover {
 @media screen and (min-width: 1200px) {
     
     body {
-        max-width: 1300px;
+        max-width: 1200px;
     }
     .container {
         width: 1150px;
         height: 75vh;
     }
+    .slider-container {
+        width: 1140px;
+    }
 
     img {
-        object-fit: cover;
-        height: 75vh;
+        width: 1140px;
+        height: 72.1vh;
+    }
+
+    .section-btn {
+        position: absolute;
+        left:1%;
+        top: 45%;
+        width: 97%;
+        text-align: center;
+        margin: 0 auto;
+    }
+    
+    .btn-container {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 1rem;
+        margin: 0;
     }
 }
